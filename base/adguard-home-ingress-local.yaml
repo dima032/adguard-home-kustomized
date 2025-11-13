@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: adguard-home-ingress
+  namespace: adguard-home
+  annotations:
+      kubernetes.io/ingress.class: traefik
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure 
+      traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  rules:
+    - host: adguard-home.internal
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: adguard-home-service
+                port:
+                  number: 80

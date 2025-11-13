@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adguard-home
+spec:
+  template:
+    spec:
+      containers:
+        - name: adguard-home
+          image: adguard/adguardhome:latest

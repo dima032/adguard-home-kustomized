@@ -1,0 +1,7 @@
+resources:
+  - adguard-home-ingress-local.yaml
+  - adguard-home-deployment.yaml
+  - adguard-home-pv-pvc.yaml
+  - adguard-home-service.yaml
+  - namespace.yaml
+  - service-account.yaml
