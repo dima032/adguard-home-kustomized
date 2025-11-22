@@ -6,6 +6,8 @@ metadata:
 spec:
   selector:
     app: adguard-home
+  externalIPs:
+    - "192.168.0.156" # <-- IMPORTANT: Replace with your node's actual local IP
   ports:
     - protocol: TCP
       port: 80
@@ -15,4 +17,12 @@ spec:
       port: 3000
       targetPort: 3000
       name: admin
+    - protocol: UDP
+      port: 53
+      targetPort: 53
+      name: dns
+    - protocol: TCP
+      port: 53
+      targetPort: 53
+      name: dns-tcp
   type: ClusterIP

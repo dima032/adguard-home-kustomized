@@ -27,11 +27,9 @@ spec:
               protocol: TCP
             - name: dns
               containerPort: 53
-              hostPort: 53
               protocol: UDP
             - name: dns-tcp
               containerPort: 53
-              hostPort: 53
               protocol: TCP
             - name: dot
               containerPort: 853
